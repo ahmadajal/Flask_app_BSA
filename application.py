@@ -47,8 +47,9 @@ def result():
         result = request.form
         print(result.to_dict())
         res = result.to_dict()
-        res["review"] = clean_text(res["review"])
-        df = pd.Series([res["review"]])
+        s_in = clean_text(res["review"])
+        s_in = " ".join(spacy_tokenizer(s_in))
+        df = pd.Series([s_in])
         # load the model
         model = load('text_classifier.joblib')
         pred = model.predict(df)
