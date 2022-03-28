@@ -7,7 +7,7 @@ import spacy
 punctuations = string.punctuation
 
 # Create our list of stopwords
-nlp = spacy.load('en')
+nlp = spacy.load('en_core_web_sm')
 stop_words = spacy.lang.en.stop_words.STOP_WORDS
 
 # Load English tokenizer, tagger, parser, NER and word vectors
